@@ -1,3 +1,9 @@
+ /** @file Meteron_Link_Test_Common.h
+ *  @brief Common header for all senders and bouncers
+ *
+ *  @author Thomas Krueger
+ *  @bug No known bugs.
+ */
 #ifndef METERON_LINK_TEST_COMMON_HDR_
 #define METERON_LINK_TEST_COMMON_HDR_
 

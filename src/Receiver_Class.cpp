@@ -1,3 +1,9 @@
+ /** @file Receiver_Class.cpp
+ *  @brief Implementations for the receiving functionality
+ *
+ *  @author Thomas Krueger
+ *  @bug No known bugs.
+ */
 #include "Receiver_Class.h"
 
 Receiver::Receiver()

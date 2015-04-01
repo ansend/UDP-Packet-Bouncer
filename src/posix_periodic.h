@@ -1,3 +1,9 @@
+ /** @file posix_periodic.h
+ *  @brief Declarations to make periodic tasks and time operation more handy
+ *
+ *  @author Thomas Krueger
+ *  @bug No known bugs.
+ */
 #ifndef POSIX_PERIODIC_H_V70N
 #define POSIX_PERIODIC_H_V70N
 

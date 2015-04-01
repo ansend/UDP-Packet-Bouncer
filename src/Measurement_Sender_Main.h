@@ -1,3 +1,10 @@
+ /** @file Measurement_Sender_Main.h
+ *  @brief Command line description and declarations for the sender
+ *
+ *  @author Thomas Krueger
+ *  @bug No known bugs.
+ */
+ 
 #ifndef MEASUREMENT_SENDER_MAIN_H_B54FGS
 #define MEASUREMENT_SENDER_MAIN_H_B54FGS
 

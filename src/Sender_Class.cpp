@@ -1,3 +1,9 @@
+/** @file Sender_Class.cpp
+ *  @brief Definitions for the sending functionality
+ *
+ *  @author Thomas Krueger
+ *  @bug No known bugs.
+ */
 #include "Sender_Class.h"
 
 Sender::Sender()

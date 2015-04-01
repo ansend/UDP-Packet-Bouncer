@@ -1,3 +1,10 @@
+ /** @file ASAP_Bouncer_Main.cpp
+ *  @brief Main function for the bouncer
+ *
+ *  @author Thomas Krueger
+ *  @bug No known bugs.
+ */
+
 #include "ASAP_Bouncer_Main.h"
 
 void * bouncing_rt_function(void * Data)

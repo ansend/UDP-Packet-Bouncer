@@ -1,4 +1,10 @@
-#pragma once
+/** @file Sender_Class.h
+ *  @brief Declarations for the sending functionality
+ *
+ *  @author Thomas Krueger
+ *  @bug No known bugs.
+ */
+
 #ifndef id06D17375_0DD4_4A72_AF7BEB7EE5F310B1
 #define id06D17375_0DD4_4A72_AF7BEB7EE5F310B1
 

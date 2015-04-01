@@ -1,3 +1,9 @@
+ /** @file Measurement_Sender_Main.cpp
+ *  @brief Main functions for the bouncer
+ *
+ *  @author Thomas Krueger
+ *  @bug No known bugs.
+ */
 #include "Measurement_Sender_Main.h"
 #include "posix_periodic.h"
 

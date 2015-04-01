@@ -1,4 +1,10 @@
-#pragma once
+ /** @file Receiver_Class.h
+ *  @brief Declarations for the receiving functionality
+ *
+ *  @author Thomas Krueger
+ *  @bug No known bugs.
+ */
+
 #ifndef idE4EF1137_8D2A_47C6_AD1C81A112E6BE91
 #define idE4EF1137_8D2A_47C6_AD1C81A112E6BE91
 

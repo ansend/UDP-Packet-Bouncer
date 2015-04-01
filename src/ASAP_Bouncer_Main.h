@@ -1,3 +1,10 @@
+ /** @file ASAP_Bouncer_Main.h
+ *  @brief Commandline info and globals for the bouncer
+ *
+ *  @author Thomas Krueger
+ *  @bug No known bugs.
+ */
+
 #ifndef ASAP_BOUNCE_MAIN_H_45609BF
 #define ASAP_BOUNCE_MAIN_H_45609BF
 

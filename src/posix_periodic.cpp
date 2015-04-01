@@ -1,3 +1,9 @@
+ /** @file posix_periodic.cpp
+ *  @brief Implementations to make periodic tasks and time operation more handy
+ *
+ *  @author Thomas Krueger
+ *  @bug No known bugs.
+ */
 #include "posix_periodic.h"
 
 double timespec2double (timespec time_to_convert)
