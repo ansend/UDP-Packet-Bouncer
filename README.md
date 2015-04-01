@@ -1,6 +1,6 @@
 # UDP-Packet-Bouncer
 ##Description
-UDP Packet bouncer to measure characteristic (latency/packet loss) of a network link. This program sends UDP packets to a specified location assuming that they are bounced back. Inside the package is a time-stamp of the local system and a counter. On return the of the packet the program can determine from the time-stamp the latency and the number of lost packages of the counter values differ.
+The UDP Packet bouncer to measure characteristic (latency/packet loss) of a network link. This program sends UDP packets to a specified location assuming that they are bounced back. Inside the package is a time-stamp of the local system and a counter. On return the of the packet the program can determine from the time-stamp the latency and the number of lost packages of the counter values differ.
 
 The measuring mechanism consist of two programs:
 
