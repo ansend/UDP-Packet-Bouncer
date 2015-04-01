@@ -58,6 +58,11 @@ void * receiver(void * Data)
 	{
 	  printf("Logging to: %s\n", Log_File_Path);
 	  Log_File = fopen(Log_File_Path, "w");
+	  if (Log_File==NULL)
+	  {
+	    printf("-- ERROR: could not create log file - check path/permissions\n");
+	    exit(EXIT_FAILURE);
+	  }
 	  fprintf(Log_File, "Latency ms | Counter | Lost messages | Timer-misses | Max_Latency ms\n");
 	  fprintf(Log_File, "====================================================================\n");
 	}
