@@ -31,7 +31,7 @@ Invoke Cmake
 ```$>cmake ../src```
 
 Build executables
-```$>make```
+```$>make ```
 
 The executables "Sender" and "Bouncer" will be created in the local directory
 
