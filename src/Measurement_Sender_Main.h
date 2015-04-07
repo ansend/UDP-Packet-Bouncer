@@ -15,6 +15,8 @@
 #include "posix_periodic.h" 
 
 #include <glib.h>
+#include <iostream>
+#include <fstream>
 
 //global variables
 pthread_t				Send_Task;
