@@ -9,7 +9,6 @@
 double timespec2double (timespec time_to_convert)
 {
   double time_double = double (time_to_convert.tv_sec) + (double) time_to_convert.tv_nsec  / 1000000000.0;
-  printf("DEBUG: %s time_double = %f\n", __FUNCTION__, time_double);
   return time_double;
 }
 
