@@ -112,29 +112,11 @@ void * receiver(void * Data)
 			Lost_Messages = Lost_Messages + (Bounced_Counter - Bounced_Counter_Prev);
 		}
 		
-		//definition of the output
-		int char_return = sprintf
-			(	Output_String,
-				"%f \t %d \t %u \t %u \t %f \n\0",
-				timespec2double(Message_Delay)*1000.0,
-				Bounced_Counter,
-				Lost_Messages,
-				period_info.wakeups_missed,
-				timespec2double(Max_Latency)*1000.0
-			);
-		printf("DEBUG: return chars: %d\n", char_return);
-		
+				
 		if (verbose)
 		{
-		  /*printf(	"%f \t %d \t %u \t %u \t %f \n\0",
-				timespec2double(Message_Delay)*1000.0,
-				Bounced_Counter,
-				Lost_Messages,
-				period_info.wakeups_missed,
-				timespec2double(Max_Latency)*1000.0
-			);*/
 		  std::cout << timespec2double(Message_Delay)*1000.0 << "  \t" << Bounced_Counter << "\t" << Lost_Messages << "\t" << period_info.wakeups_missed << "\t" << timespec2double(Max_Latency)*1000.0 << std::endl;
-		  //printf("%s", Output_String);			
+		 		
 		}//end if verbose
 		
 		if (Log_File_Path != NULL)
