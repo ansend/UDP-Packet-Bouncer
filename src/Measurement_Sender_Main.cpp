@@ -51,7 +51,7 @@ void * receiver(void * Data)
 	long			Bounced_Counter_Prev = 0;
 	char			Data_Buffer[Max_Payload_Data_Size];
 	unsigned		Lost_Messages = 0;
-	FILE	*		Log_File;
+	std::ofstream 		Log_File;
 	char 			Output_String[512];
 	
 	
@@ -63,14 +63,14 @@ void * receiver(void * Data)
 	else
 	{
 	  printf("Logging to: %s\n", Log_File_Path);
-	  Log_File = fopen(Log_File_Path, "w");
+	  Log_File.open(Log_File_Path);
 	  if (Log_File==NULL)
 	  {
 	    printf("-- ERROR: could not create log file - check path/permissions\n");
 	    exit(EXIT_FAILURE);
 	  }
-	  fprintf(Log_File, "Latency ms | Counter | Lost messages | Timer-misses | Max_Latency ms\n");
-	  fprintf(Log_File, "====================================================================\n");
+	  Log_File << "Latency ms | Counter | Lost messages | Timer-misses | Max_Latency ms\n" << std::endl;
+	  Log_File << "====================================================================\n" << std::endl;
 	}
 	
 	
@@ -126,31 +126,22 @@ void * receiver(void * Data)
 		
 		if (verbose)
 		{
-		  printf(	"%f \t %d \t %u \t %u \t %f \n\0",
+		  /*printf(	"%f \t %d \t %u \t %u \t %f \n\0",
 				timespec2double(Message_Delay)*1000.0,
 				Bounced_Counter,
 				Lost_Messages,
 				period_info.wakeups_missed,
 				timespec2double(Max_Latency)*1000.0
-			);
+			);*/
+		  std::cout << timespec2double(Message_Delay)*1000.0 << "  \t" << Bounced_Counter << "\t" << Lost_Messages << "\t" << period_info.wakeups_missed << "\t" << timespec2double(Max_Latency)*1000.0 << std::endl;
 		  //printf("%s", Output_String);			
 		}//end if verbose
 		
 		if (Log_File_Path != NULL)
 		{
 		
-		  fprintf(Log_File, "%s", Output_String);
-		  /*fprintf
-		  (	Log_File,	
-			  "%f \t %ld \t %u \t %d \t %f\n",
-				timespec2double(Message_Delay)*1000.0,
-				Bounced_Counter,
-				Lost_Messages,
-				period_info.wakeups_missed,
-				Max_Latency
-		);*/
-		  //flush the buffers
-		  fflush(Log_File);
+		 Log_File << timespec2double(Message_Delay)*1000.0 << "  \t" << Bounced_Counter << "\t" << Lost_Messages << "\t" << period_info.wakeups_missed << "\t" << timespec2double(Max_Latency)*1000.0 << std::endl;
+		 Log_File.flush();
 		}
 	}//end while loop task loop
 	
