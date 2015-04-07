@@ -113,19 +113,27 @@ void * receiver(void * Data)
 		}
 		
 		//definition of the output
-		sprintf
+		int char_return = sprintf
 			(	Output_String,
-				"%f \t %ld \t %u \t %d \t %f\n",
+				"%f \t %d \t %u \t %u \t %f \n\0",
 				timespec2double(Message_Delay)*1000.0,
 				Bounced_Counter,
 				Lost_Messages,
 				period_info.wakeups_missed,
 				timespec2double(Max_Latency)*1000.0
 			);
+		printf("DEBUG: return chars: %d\n", char_return);
 		
 		if (verbose)
 		{
-			printf("%s", Output_String);			
+		  printf(	"%f \t %d \t %u \t %u \t %f \n\0",
+				timespec2double(Message_Delay)*1000.0,
+				Bounced_Counter,
+				Lost_Messages,
+				period_info.wakeups_missed,
+				timespec2double(Max_Latency)*1000.0
+			);
+		  //printf("%s", Output_String);			
 		}//end if verbose
 		
 		if (Log_File_Path != NULL)
