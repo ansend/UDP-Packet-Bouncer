@@ -16,15 +16,16 @@ class Sender
 private:
 	int						Socket_Desc;
 	struct   sockaddr_in	Dest_Addr; //address of the bouncer
-	bool					Initialized = false;
+	bool					Initialized ;
 
 
 public:
 	Sender();
 	Sender(char * Destination_IP_Address, int Destination_Port);
-	
 	void init(char * Destination_IP_Address, int Destination_Port);
 	int transmit(char * Data, int Data_Length);
+
+	int transmit_by_addr(char * Data, int Data_Length);
 };
 
 #endif // header

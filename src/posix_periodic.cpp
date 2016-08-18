@@ -58,16 +58,11 @@ void wait_period (struct periodic_info *info)
 
 	/* Wait for the next timer event. If we have missed any the
 	   number is written to "missed" */
-again:
 	ret = read (info->timer_fd, &missed, sizeof (missed));
 	if (ret == -1)
 	{
-            if(errno == EINTR)
-                goto again;
-            else{
 		perror ("read timer");
 		return;
-             }
 	}
 	
 	if (missed > 0)

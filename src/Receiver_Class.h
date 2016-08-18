@@ -14,10 +14,11 @@ class Receiver
 {
 private:
 	int						Socket_Desc;
-	struct   sockaddr_in 	Source_Addr; 
-	bool					Initialized = false;
+//	struct   sockaddr_in 	Source_Addr; 
+	bool					Initialized;
 	
 public:
+	struct   sockaddr_in    Source_Addr;
 	Receiver();
 	Receiver(char * Source_IP_Address, int Source_Port);
 	

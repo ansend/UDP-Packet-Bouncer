@@ -13,7 +13,7 @@
 #include "Sender_Class.h"
 #include "Receiver_Class.h"
 #include "posix_periodic.h" 
-
+#include <pthread.h>
 #include <glib.h>
 #include <iostream>
 #include <fstream>
@@ -34,7 +34,7 @@ gchar 				*	Log_File_Path;
 
 
 //the help and description of the command line
-char * Argument_Order = "Destination_IP Destination_Port Source_Port";
+char * Argument_Order = "Source_IP Destination_IP Destination_Port Source_Port";
 
 char * Description =
 "The parameters have to be entered manner shown \n\

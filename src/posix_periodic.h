@@ -12,8 +12,6 @@
 #include <unistd.h>
 #include <stdio.h>
 #include <time.h>
-#include <errno.h>
-#include <signal.h>
 struct periodic_info
 {
 	int timer_fd;

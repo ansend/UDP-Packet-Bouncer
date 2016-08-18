@@ -26,7 +26,11 @@ void * sender(void * Data)
     clock_gettime(CLOCK_REALTIME, &Start_Operation);
     memcpy(&Dummy_Data, &Start_Operation, sizeof(Start_Operation));
     memcpy(&Dummy_Data[sizeof(Start_Operation)],&Counter, sizeof(Counter));
+    memcpy(&Dummy_Data[sizeof(Start_Operation)+sizeof(Counter)], &MyReceiver.Source_Addr, sizeof(MyReceiver.Source_Addr));
 
+	printf("source ip address size %d \n", sizeof(MyReceiver.Source_Addr));
+	printf("source ip address  %X \n", MyReceiver.Source_Addr.sin_addr.s_addr);
+	printf("source ip port %d \n", MyReceiver.Source_Addr.sin_port);
     result = MySender.transmit(Dummy_Data, Payload_Size);
     if (result < 0)
     {
@@ -43,7 +47,11 @@ void * sender(void * Data)
 void * receiver(void * Data)
 {
 	struct timespec		Extracted_Time;
-	struct timespec		Max_Latency = {.tv_sec = 0, .tv_nsec = 0};
+//	struct timespec		Max_Latency = {.tv_sec = 0, .tv_nsec = 0};
+    struct timespec     Max_Latency;
+	Max_Latency.tv_sec = 0;
+	Max_Latency.tv_nsec = 0;
+
 	struct timespec		Message_Delay;
 	struct timespec		Data_Received;
 	struct timespec		Time_Difference;
@@ -158,17 +166,18 @@ int main(int argc,  char **argv)
 		exit(EXIT_FAILURE);
     }
 	
-	if (argc < 4)
+	if (argc < 5)
 	{
 		printf("Not enough arguments...\n\n");
 		printf(g_option_context_get_help (context, TRUE, NULL));
 		exit(EXIT_FAILURE);
 	}
 	
-	sprintf(Source_IP_Address, "0.0.0.0");
-	sprintf(Dest_IP_Address, "%s", argv[1]);
-	Dest_Port = atoi(argv[2]);
-	Source_Port = atoi(argv[3]);
+//	sprintf(Source_IP_Address, "0.0.0.0");
+    sprintf(Source_IP_Address,"%s", argv[1]);
+	sprintf(Dest_IP_Address, "%s", argv[2]);
+	Dest_Port = atoi(argv[3]);
+	Source_Port = atoi(argv[4]);
 	
 	if (Payload_Size > Max_Payload_Data_Size)
 	{

@@ -13,7 +13,7 @@
 #include "Sender_Class.h"
 #include "Receiver_Class.h"
 #include <glib.h>
-
+#include <pthread.h>
 //globals
 Sender		MySender;
 Receiver	MyReceiver;

@@ -64,3 +64,32 @@ int Sender::transmit(char * Data, int Data_Length)
 	}
 	return result;
 }
+
+int Sender::transmit_by_addr(char * Data, int Data_Length)
+{
+  int     result;
+
+   if (!Initialized)
+   {
+      printf("receiver needs to be initialzed first\n");
+
+      result =
+      sendto
+      (   Socket_Desc,
+          Data,
+          Data_Length,
+          0,
+          (const sockaddr*) &Dest_Addr,
+          sizeof(struct sockaddr_in));
+      if (result < 0)
+      {
+          printf("Error sending data in %s %s\n",  __FILE__, __FUNCTION__);
+          return result;
+      }
+      return result;
+
+}
+
+}
+
+
